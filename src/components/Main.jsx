@@ -1,34 +1,50 @@
 import Constants from 'expo-constants';
-import {Text, StyleSheet, View} from 'react-native';
-import RepositoryList from './RepositoryList';
+import {Text as NativeText, StyleSheet, View} from 'react-native';
+import RepoList from './RepositoryList';
+import Text from './Text';
+import AppBar from './AppBar';
 
 const styles = StyleSheet.create({
     container: {
         marginTop: Constants.statusBarHeight,
-        flexGrow: 1,
-        flexShrink: 1,
+        backgroundColor: '#e1e4e8',
     },
     header: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginLeft: 20,
-        marginTop: 5
+        // alignContent: center,
+        textAlign: 'center',
+        // marginLeft: 20,
+        // marginTop: 10
+        paddingTop: 10
     },
+
 
 })
 
 const Main = () => {
     console.log("Main---")
     return (
+        <>
         <View style={styles.container}>
-
-            <Text style={styles.header}>Rate Repository Application</Text>
-
+            <AppBar content='Repositories'></AppBar>
             <View style={styles.container}>
-                <RepositoryList />
+                <RepoList />
             </View>
         </View>
-        
+
+        {/* <View>
+            <Text>Simple text</Text>
+            <Text style={{ paddingBottom: 10 }}>Text with custom style</Text>
+            <Text fontWeight="bold" fontSize="subheading">
+                Bold subheading
+            </Text>
+            <Text color="textSecondary">Text with secondary color</Text>
+            <Text color="textPrimary">Text with pink color</Text>
+
+        </View> */}
+        </>
+
     )
 }
 
