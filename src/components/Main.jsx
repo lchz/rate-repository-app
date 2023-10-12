@@ -1,12 +1,12 @@
 import Constants from 'expo-constants';
 import {Text as NativeText, StyleSheet, View} from 'react-native';
 import RepoList from './RepositoryList';
-import Text from './Text';
+// import Text from './Text';
 import AppBar from './AppBar';
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: Constants.statusBarHeight,
+        // marginTop: Constants.statusBarHeight,
         backgroundColor: '#e1e4e8',
     },
     header: {
@@ -32,17 +32,6 @@ const Main = () => {
                 <RepoList />
             </View>
         </View>
-
-        {/* <View>
-            <Text>Simple text</Text>
-            <Text style={{ paddingBottom: 10 }}>Text with custom style</Text>
-            <Text fontWeight="bold" fontSize="subheading">
-                Bold subheading
-            </Text>
-            <Text color="textSecondary">Text with secondary color</Text>
-            <Text color="textPrimary">Text with pink color</Text>
-
-        </View> */}
         </>
 
     )

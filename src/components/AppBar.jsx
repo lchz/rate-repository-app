@@ -30,7 +30,7 @@ const AppBar = ({content}) => {
         <View style={styles.flexItem}>
 
             <Pressable onPress={() => Alert.alert('You pressed title!')}>
-            <Text style={styles.textColor}>{content}</Text>
+              <Text style={styles.textColor}>{content}</Text>
             </Pressable>
 
         </View>
