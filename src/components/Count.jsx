@@ -3,7 +3,8 @@ import {View, Text, StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     columnContainer: {
         flexDirection:'column', 
-        flex:1, justifyContent: 'space-around', 
+        flex: 1, 
+        justifyContent: 'space-around', 
         alignItems: 'center'
     }
 })
