@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     errorText: {
         marginTop: 5,
         color: '#d73a4a',
+        marginHorizontal: 10,
     },
     inputBoxBorder: {
         borderColor: '#d73a4a',
@@ -16,11 +17,6 @@ const styles = StyleSheet.create({
 const FormikTextInput = ({name, style, ...props}) => {
     const [field, meta, helpers] = useField(name)
     const showError = meta.touched && meta.error
-
-    // console.log('name:', name, '\nmeta.touched:', meta.touched, 
-    // '\nmeta.error:', meta.error, '\nshowError:', showError,
-    // '\nstyles:', [style, showError && styles.inputBoxBorder])
-
 
     // Change color of the border of the input box if error occur
 
