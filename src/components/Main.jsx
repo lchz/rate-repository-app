@@ -1,11 +1,11 @@
-import Constants from 'expo-constants';
-import {Text, StyleSheet, View, Platform, Alert} from 'react-native';
+import {Text, StyleSheet, View, Platform} from 'react-native';
 import { Route, Routes, Navigate } from 'react-router-native';
 
 import RepoList from './RepositoryList';
 // import Text from './Text';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
+import myStyleSheet from '../styleSheet';
 
 const styles = StyleSheet.create({
     container: {
@@ -33,9 +33,13 @@ const Main = () => {
             <Routes>
                 <Route path='/' element={<RepoList />} />
                 <Route path='/signin' element={<SignIn />} />
-
                 <Route path='*' element={<Navigate to='/' replace />} />
             </Routes>
+
+            <View style={myStyleSheet.footStyle}>
+                <Text>Foot note</Text>
+            </View>
+
         </View>
     )
 }

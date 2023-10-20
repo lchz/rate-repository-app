@@ -1,13 +1,13 @@
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { Link } from 'react-router-native';
 
-import Constants from 'expo-constants';
 import theme from '../theme.js'
+import myStyleSheet from '../styleSheet.js';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.appBarBackgroundColor,
-    height: 150,
+    height: myStyleSheet.appBarStyle.height,
   },
   flexContainer: {
     alignItems: 'flex-end',
