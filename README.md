@@ -4,9 +4,13 @@ This is an application developed with React Native, following the material in [F
 
 The application enables sorting and filtering reviewed repositories, user registration, logging in and creating a review for a repository.
 
+## Usage
+
+- npm start
+  
 ## Tech
 
-- Routing: using `NativeRouter` in the `react-router-native` library. Usage:
+- **Routing**: using `NativeRouter` in the `react-router-native` library. Usage:
 
     ```
     Install: npm install react-router-native.
@@ -15,7 +19,7 @@ The application enables sorting and filtering reviewed repositories, user regist
 
     Add the routes in Main.jsx.
     ```
-- Form state management: using `Formik` library. Component `useField` for the state's fields.
+- **Form state management**: using `Formik` library. Component `useField` for the state's fields.
 
     Install:
     ```
@@ -33,6 +37,3 @@ The application enables sorting and filtering reviewed repositories, user regist
 - Form validation: using `validationSchema` prop provided by `Yup` library.
 
 
-## Usage
-
-- npm start
