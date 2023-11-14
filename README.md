@@ -69,6 +69,36 @@ The application enables sorting and filtering reviewed repositories, user regist
     Find the content from the corresponding link above.
     ```
 
+- **Environment variables** ([Link](https://fullstackopen.com/en/part10/communicating_with_server#environment-variables))
     
+    Rename *app.json* -> *app.config.js*.
+
+    Install:
+    ```
+    npm install dotenv
+    ```
+
+    Add *.env* file in the root dir.
+
+    *.env*:
+    ```
+    ENV=...
+    APOLLO_URI=...
+    ```
+
+    Import *dotenv* lib (ONLY) in the *app.config.js*:
+    ```
+    import 'dotenv/config;
+
+    export default {
+        name: ...,
+        extra: {
+            env: process.env.ENV,
+            uri: process.env.APOLLO_URI,
+        },
+        ...
+    }
+    ```
+
 
 
