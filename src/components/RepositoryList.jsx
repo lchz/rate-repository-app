@@ -17,9 +17,12 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
   const {repositories} = useRepositories();
+  // console.log('Repositories:', repositories)
 
   const repositoryNodes = repositories ? repositories.edges.map(edge => edge.node)
                                        : []
+
+  // console.log('Repo nodes:', repositoryNodes)
   return (
     <View style={styles.repoListContainer}>
       <FlatList

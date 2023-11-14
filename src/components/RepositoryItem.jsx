@@ -5,6 +5,7 @@ import theme from '../theme.js';
 import Count from './Count';
 
 
+
 const styles = StyleSheet.create({
 
     flexContainer: {
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     },
     textDesc: {
         flex: 1,
-        color: 'pink'
+        color: 'coral'
     },
     textLangContainer: {
         flex: 1,
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
 
 const Item = ({repo}) => {
 
-    const DATA = [
+    const STATS_DATA = [
         {
             id: 'Stars',
             count: repo.stargazersCount
@@ -83,9 +84,9 @@ const Item = ({repo}) => {
     ]
 
     const showColumns = []
-    for (let i = 0; i < DATA.length; i++) {
-        const element = DATA[i];
-        showColumns.push(<Count key={element.id} item={element} />)
+    for (let i = 0; i < STATS_DATA.length; i++) {
+        const element = STATS_DATA[i];
+        showColumns.push(<Count key={Math.random()} item={element} />)
     }        
     
 
