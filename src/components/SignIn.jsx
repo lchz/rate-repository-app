@@ -77,7 +77,6 @@ const SignIn = () => {
         } catch (e) {
             console.log('Sign in error:', e)
         }
-        // console.log(`Your username: ${values.username}, psd: ${values.psd}`)
     }
 
     return (
