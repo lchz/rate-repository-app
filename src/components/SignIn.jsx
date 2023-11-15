@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import * as yup from 'yup';
 
 import theme from '../theme';
+import useSignIn from '../hooks/useSignIn';
 
 
 const styles = StyleSheet.create({
@@ -36,16 +37,16 @@ const styles = StyleSheet.create({
 
 const initialValues = {
     username: '',
-    psd: ''
+    password: ''
 }
 
 const validationSchema = yup.object().shape({
     username: yup.string()
-                 .min(5, "The length of username must be at least 5 characters.")
+                 .min(3, "The length of username must be at least 3 characters.")
                  .required('Username is required.'),
-    psd: yup.string()
-            .min(5, "The length of password must be at least 5 characters.")
-            .required("Password is required."),
+    password: yup.string()
+                .min(5, "The length of password must be at least 5 characters.")
+                .required("Password is required."),
 })
 
 const SignInForm = ({onSubmit}) => {
@@ -53,7 +54,7 @@ const SignInForm = ({onSubmit}) => {
     return (
         <View style={styles.flexContainer}>
             <FormikTextInput name='username' style={styles.inputBox} placeholder=' Enter username' />
-            <FormikTextInput name='psd' style={styles.inputBox} secureTextEntry={true} placeholder=' Enter password' />
+            <FormikTextInput name='password' style={styles.inputBox} secureTextEntry={true} placeholder=' Enter password' />
 
             <Pressable onPress={onSubmit} >
                 <View style={[styles.inputBox, styles.inputBox2]}>
@@ -66,8 +67,17 @@ const SignInForm = ({onSubmit}) => {
 }
 
 const SignIn = () => {
-    const onSubmit = (values) => {
-        console.log(`Your username: ${values.username}, psd: ${values.psd}`)
+    const [signIn] = useSignIn()
+
+    const onSubmit = async (values) => {
+        const {username, password} = values
+        try {
+            const {data} = await signIn({username, password})
+            console.log('Sign in data:', data)
+        } catch (e) {
+            console.log('Sign in error:', e)
+        }
+        // console.log(`Your username: ${values.username}, psd: ${values.psd}`)
     }
 
     return (

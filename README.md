@@ -100,5 +100,11 @@ The application enables sorting and filtering reviewed repositories, user regist
     }
     ```
 
+- **Storing data on user's device**
+
+    Install *AsyncStorage*:
+    ```
+    npx expo install @react-native-async-storage/async-storage
+    ```
 
 
