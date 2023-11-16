@@ -6,6 +6,8 @@ import * as yup from 'yup';
 
 import theme from '../theme';
 import useSignIn from '../hooks/useSignIn';
+import { ApolloClient } from '@apollo/client';
+import { useApolloClient,  } from "@apollo/client";
 
 
 const styles = StyleSheet.create({
@@ -68,11 +70,17 @@ const SignInForm = ({onSubmit}) => {
 
 const SignIn = () => {
     const [signIn] = useSignIn()
+    const client = useApolloClient()
 
     const onSubmit = async (values) => {
         const {username, password} = values
         try {
             const {data} = await signIn({username, password})
+            // data : ApolloClient
+            if (data) {
+                client.resetStore()
+            }
+            
             console.log('Sign in data:', data)
         } catch (e) {
             console.log('Sign in error:', e)
